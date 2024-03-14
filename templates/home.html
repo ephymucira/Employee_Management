@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog-{{ title }}</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        .header {
+            background-color: #fa923f;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .nav {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .card {
+            flex-basis: calc(33.333% - 20px);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>Delicious Dishes</h1>
+    <p>Welcome to our tasty world!</p>
+</div>
+
+<div class="nav">
+    <a href="#home">Home</a>
+    <a href="#menu">Menu</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</div>
+
+<div class="content">
+    <h2>Featured Dishes</h2>
+    <div class="gallery">
+        <div class="card">
+            <img src="dish1.jpg" alt="Dish 1">
+            <div class="card-content">
+                <h3>Delicious Pasta</h3>
+                <p>A delightful blend of rich sauces and vibrant flavors.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="dish2.jpg" alt="Dish 2">
+            <div class="card-content">
+                <h3>Classic Burger</h3>
+                <p>Juicy and flavorful, a timeless classic that never disappoints.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="dish3.jpg" alt="Dish 3">
+            <div class="card-content">
+                <h3>Exotic Salads</h3>
+                <p>Fresh and crisp, a burst of flavors in every bite.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <p>Contact us at info@deliciousdishes.com</p>
+</div>
+
+</body>
+</html>

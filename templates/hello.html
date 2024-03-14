@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anything</title>
+</head>
+<body>
+    <p>Hello World</p>
+    <p>my user id is: {{user_id}}</p>
+    {% for post in posts %}
+    <p>{{post.title}}</p>
+    <p>By {{post.author}} on {{post.date_posted}}</p>
+    <p>{{post.content}}</p>
+    {% endfor %}
+    
+</body>
+</html>

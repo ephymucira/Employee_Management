@@ -1,0 +1,156 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+ <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin-left: o;
+            padding: 0;
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: fit-content;
+            margin-left: 500px;
+        }
+
+        .recall{
+            margin-left: 500px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+    
+        <div class="container container-fluid row" style="margin-left: 550px;">
+          <p style="float: left; color: #3498db;"> Add New Employee</p><br><br>
+          <p style="float: right; color: #4CAF50;"> <a href="{{ url_for('profile') }}" style="color: #45a049; text-decoration: none;"> View All Employee </a></p>
+        </div>
+
+    <form method="post" action="/new">
+        <h2> Add New Employee </h2>
+        <div class="container container-fluid">
+            <div class="row col-12">
+                <div class="col-6">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="col-6">
+                    <label for="name">Email:</label>
+                    <input type="text" id="email" name="email" required>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="container container-fluid">
+            <div class="row col-12">
+                <div class="col-6">
+                    <label for="name">Phone No:</label>
+                    <input type="text" id="phone" name="phone" required>
+                </div>
+                <div class="col-6">
+                    <label for="name">Address</Address>:</label>
+                    <input type="text" id="address" name="address" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-fluid">
+            <div class="row col-12">
+                <div class="col-6">
+                    <label for="name">Joining date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="col-6">
+                    <label for="name">Total Projects:</label>
+                    <input type="number" id="num" name="num" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-fluid">
+            <div class="row col-12">
+                <div class="col-6">
+                    <label for="name">Total Test Case:</label>
+                    <input type="number" id="num1" name="num1" required>
+                </div>
+                <div class="col-6">
+                    <label for="name">Total Defects Found:</label>
+                    <input type="number" id="num2" name="num2" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-fluid">
+            <div class="row col-12">
+                <div class="col-6">
+                    <label for="name">Total Defects Pending:</label>
+                    <input type="number" id="num3" name="num3" required>
+                </div>
+                <div class="col-6">
+                    <label for="name">Department:</label>
+                    <input type="text" id="department" name="department" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="container container-fluid">
+            <div class="row col-12">
+                <div class="col-6">
+                    <label for="name">Profession:</label>
+                    <input type="text" id="num4" name="num4" required>
+                </div>
+                <div class="col-6">
+                    <button type="submit">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+        
+    </form>
+
+<div class="border-top pt-3 recall">
+    
+     
+</div>
+
+{% endblock content %}

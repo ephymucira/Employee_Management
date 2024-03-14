@@ -1,0 +1,81 @@
+{% extends 'layout.html'%}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin-left: o;
+        padding: 0;
+        
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        margin-left: 500px;
+    }
+
+    .recall{
+        margin-left: 500px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+
+<body>
+<form method="post" action="/login">
+    <h2> Login Form {% if loginerror %} {{ loginerror }} {% endif %}</h2>
+    
+    <label for="Username">Username:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <button type="submit">Login</button>
+</form>
+
+<div class="border-top pt-3 recall">
+<small class="text-muted">
+    Don't have an account? <a class="ml-2 text-muted" href="{{ url_for('register') }}">Sign Up</a>
+
+</small>
+ 
+</div>
+
+{% endblock content %}

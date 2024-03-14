@@ -1,0 +1,148 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .responsive-table {
+      overflow-x: auto;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 600px; /* Adjust based on your content */
+    }
+    th, td {
+      text-align: left;
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-left: 200px;
+      width: 800px;
+    }
+
+    section {
+      width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      margin-left: 200px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+
+    h1 {
+      color:white;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #3498db;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      section {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>{{ user }}</h1>
+    <p>Profession:{{ pori[11] }} </p>
+  </header>
+
+  <section>
+    <div class="container container-fluid row">
+      <p style="float: left; color: #3498db;"> View All Employee</p>
+      <p style="float: right; color: #4CAF50;"> <a href="{{ url_for('new') }}" style="color: #45a049; text-decoration: none;"> Add New Employee </a></p>
+    </div>
+    
+    <div class="responsive-table">
+        <table>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Joining_date</th>
+            <th>Total_Projects</th>
+            <th>Total_Test_Case</th>
+            <th>Total_Defects_Found</th>
+            <th>Total_Defects_Pending</th>
+            <th>Department</th>
+            <th>Profession</th>
+            
+          </tr>
+          {% for i in profiledata %}
+
+          <tr>
+            <td>{{ i[1] }}</td>
+            <td>{{ i[2] }}</td>
+            <td>{{ i[3] }}</td>
+            <td>{{ i[4] }} </td>
+            <td>{{ i[5] }}</td>
+            <td>{{ i[6] }}</td>
+            <td>{{ i[7] }}</td>
+            <td>{{ i[8] }}</td>
+            <td>{{ i[9] }}</td>
+            <td>{{ i[10] }}</td>
+            <td>{{ i[11] }}</td>
+            <td><button class="btn btn-success">update</button></td>
+            <td><button class="btn btn-danger">Delete</button></td>
+            <td><button class="btn btn-info">View full profile</button></td>
+          </tr>
+          {% endfor %}
+          <!-- Add more rows as needed -->
+        </table>
+      </div>
+
+      
+
+    <div class="social-icons">
+      <a href="https://twitter.com/yourtwitter" target="_blank">Twitter</a>
+      <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+      <!-- Add more social icons as needed -->
+    </div>
+  </section>
+
+{% endblock%}
